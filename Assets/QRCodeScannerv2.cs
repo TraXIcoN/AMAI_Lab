@@ -21,7 +21,7 @@ public class QRCodeScannerv2 : MonoBehaviour
                 QRCodeGenerator qrGenerator = eventData.NewFocusedObject.GetComponent<QRCodeGenerator>();
                 if (qrGenerator != null)
                 {
-                    string encodedData = qrGenerator.GenerateQRCodeData;
+                    string encodedData = qrGenerator.GenerateQRCodeData();
                     Debug.Log("QR Code Data: " + encodedData);
 
                     // Implement actions based on the encoded data

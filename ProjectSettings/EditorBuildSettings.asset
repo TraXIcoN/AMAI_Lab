@@ -8,4 +8,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/trial_scene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  m_configObjects: {}
+  m_configObjects:
+    Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: 8781a9469f774c14a96ac2e795bed354,
+      type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 1bed26316c661314cb75e8dbac091936,
+      type: 2}

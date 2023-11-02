@@ -57,9 +57,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\QRCodeScannerv2.cs" />
+    <Compile Include="Assets\Samples\Mixed Reality Toolkit Examples\2.7.0\Demos - HandTracking\Scripts\DebugTextOutput.cs" />
+    <Compile Include="Assets\Samples\Mixed Reality Toolkit Examples\2.7.0\Demos - HandTracking\Scripts\DemoTouchButton.cs" />
+    <Compile Include="Assets\Samples\Mixed Reality Toolkit Examples\2.7.0\Demos - HandTracking\Scripts\GestureTester.cs" />
+    <Compile Include="Assets\Samples\Mixed Reality Toolkit Examples\2.7.0\Demos - HandTracking\Scripts\GrabTouchExample.cs" />
+    <Compile Include="Assets\Samples\Mixed Reality Toolkit Examples\2.7.0\Demos - HandTracking\Scripts\HandInteractionTouch.cs" />
+    <Compile Include="Assets\Samples\Mixed Reality Toolkit Examples\2.7.0\Demos - HandTracking\Scripts\HandInteractionTouchRotate.cs" />
+    <Compile Include="Assets\Samples\Mixed Reality Toolkit Examples\2.7.0\Demos - HandTracking\Scripts\LaunchUri.cs" />
+    <Compile Include="Assets\Samples\Mixed Reality Toolkit Examples\2.7.0\Demos - HandTracking\Scripts\LeapCoreAssetsDetector.cs" />
+    <Compile Include="Assets\Samples\Mixed Reality Toolkit Examples\2.7.0\Demos - HandTracking\Scripts\LeapMotionOrientationDisplay.cs" />
+    <Compile Include="Assets\Samples\Mixed Reality Toolkit Examples\2.7.0\Demos - HandTracking\Scripts\RotateWithPan.cs" />
+    <Compile Include="Assets\Samples\Mixed Reality Toolkit Examples\2.7.0\Demos - HandTracking\Scripts\SolverTrackedTargetType.cs" />
+    <Compile Include="Assets\Samples\Mixed Reality Toolkit Examples\2.7.0\Demos - HandTracking\Scripts\SystemKeyboardExample.cs" />
+    <Compile Include="Assets\Samples\Mixed Reality Toolkit Examples\2.7.0\Demos - HandTracking\Scripts\TetheredPlacement.cs" />
+    <Compile Include="Assets\Samples\Mixed Reality Toolkit Examples\2.7.0\Demos - HandTracking\Scripts\ToggleBoundingBox.cs" />
     <Compile Include="Assets\Scripts\Spoawn.cs" />
     <Compile Include="Assets\qrcodegenerator.cs" />
     <Compile Include="Assets\qrimage.cs" />
+    <Compile Include="Assets\transform.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -80,6 +95,7 @@
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
+    <None Include="Assets\zxing.unity.dll" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\MRTK\Shaders\MixedRealityStandard.shader" />
     <None Include="Assets\MixedRealityToolkit.Generated\link.xml" />
@@ -271,6 +287,9 @@
     </Reference>
     <Reference Include="UnityEditor">
       <HintPath>E:\AMAI_LAB\Unity\2019.4.28f1\Editor\Data\Managed\UnityEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing.unity">
+      <HintPath>Assets\zxing.unity.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>E:\AMAI_LAB\Unity\2019.4.28f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\mscorlib.dll</HintPath>
@@ -764,9 +783,6 @@
     <Reference Include="Microsoft.MixedReality.Toolkit.Providers.LeapMotion.Editor">
       <HintPath>Library\ScriptAssemblies\Microsoft.MixedReality.Toolkit.Providers.LeapMotion.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.XR.WindowsMR.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.XR.WindowsMR.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.VisualStudio.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
     </Reference>
@@ -806,14 +822,47 @@
     <Reference Include="Microsoft.MixedReality.Toolkit.Examples">
       <HintPath>Library\ScriptAssemblies\Microsoft.MixedReality.Toolkit.Examples.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.XR.WindowsMR">
-      <HintPath>Library\ScriptAssemblies\Unity.XR.WindowsMR.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.MixedReality.Toolkit.Services.InputSimulation">
       <HintPath>Library\ScriptAssemblies\Microsoft.MixedReality.Toolkit.Services.InputSimulation.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.XR.Management">
+      <HintPath>Library\ScriptAssemblies\Unity.XR.Management.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.XR.LegacyInputHelpers">
+      <HintPath>Library\ScriptAssemblies\UnityEngine.XR.LegacyInputHelpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.XR.Management.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.XR.Management.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.SpatialTracking">
+      <HintPath>Library\ScriptAssemblies\UnityEditor.SpatialTracking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SpatialTracking">
+      <HintPath>Library\ScriptAssemblies\UnityEngine.SpatialTracking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.XR.LegacyInputHelpers">
+      <HintPath>Library\ScriptAssemblies\UnityEditor.XR.LegacyInputHelpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Subsystem.Registration">
+      <HintPath>Library\ScriptAssemblies\Unity.Subsystem.Registration.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.XR.ARSubsystems">
+      <HintPath>Library\ScriptAssemblies\Unity.XR.ARSubsystems.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.XR.ARSubsystems.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.XR.ARSubsystems.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.XR.InteractionSubsystems">
+      <HintPath>Library\ScriptAssemblies\Unity.XR.InteractionSubsystems.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.XR.WindowsMixedReality.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.XR.WindowsMixedReality.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.XR.WindowsMixedReality">
+      <HintPath>Library\ScriptAssemblies\Unity.XR.WindowsMixedReality.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
