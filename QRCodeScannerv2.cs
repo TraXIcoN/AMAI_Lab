@@ -29,7 +29,19 @@ public class QRCodeScannerv2 : MonoBehaviour, IMixedRealityPointerHandler
             }
         }
     }
+    public void OnPointerDown(MixedRealityPointerEventData eventData)
+    {
+    // This method is intentionally left empty because you don't need any specific actions when the pointer goes down.
+    }
 
+    public void OnPointerDragged(MixedRealityPointerEventData eventData)
+    {
+    // This method is intentionally left empty because you don't need any specific actions during dragging.
+    }   
+    public void OnPointerUp(MixedRealityPointerEventData eventData)
+    {
+    // This method is intentionally left empty because you don't need any specific actions when the pointer goes up.
+    }
 
     private void UseQRCodeData(string encodedData)
     {
