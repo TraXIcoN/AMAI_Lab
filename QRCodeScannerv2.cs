@@ -7,23 +7,17 @@ using Microsoft.MixedReality.Toolkit;
 using Microsoft.MixedReality.Toolkit.Input;
 using Microsoft.MixedReality.Toolkit.UI;
 
-public class QRCodeScannerv2 : MonoBehaviour, IMixedRealityGazeHandler
+public class QRCodeScannerv2 : MonoBehaviour, IMixedRealityPointerHandler
 {
-    private void Start()
+    public void OnPointerDown(MixedRealityPointerEventData eventData)
     {
-        
-        CoreServices.InputSystem?.RegisterHandler<IMixedRealityGazeHandler>(this);
-    }
-   public void OnBeforeFocusChange(FocusEventData eventData) { }
-
-    public void OnFocusEnter(FocusEventData eventData)
-    {
-        if (eventData.NewFocusedObject != null)
+        // Check if the touched object is the "QRCodeGenerator"
+        if (eventData.Pointer.Result.CurrentPointerTarget != null)
         {
-            if (eventData.NewFocusedObject.name == "QRCodeGenerator")
+            if (eventData.Pointer.Result.CurrentPointerTarget.name == "QRCodeGenerator")
             {
                 // Access the encoded data from the QRCodeGenerator script
-                QRCodeGenerator qrGenerator = eventData.NewFocusedObject.GetComponent<QRCodeGenerator>();
+                QRCodeGenerator qrGenerator = eventData.Pointer.Result.CurrentPointerTarget.GetComponent<QRCodeGenerator>();
                 if (qrGenerator != null)
                 {
                     string encodedData = qrGenerator.GenerateQRCodeData;
