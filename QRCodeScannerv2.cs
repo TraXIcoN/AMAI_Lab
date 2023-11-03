@@ -7,8 +7,13 @@ using Microsoft.MixedReality.Toolkit;
 using Microsoft.MixedReality.Toolkit.Input;
 using Microsoft.MixedReality.Toolkit.UI;
 
-public class QRCodeScannerv2 : MonoBehaviour
+public class QRCodeScannerv2 : MonoBehaviour, IMixedRealityGazeHandler
 {
+    private void Start()
+    {
+        
+        CoreServices.InputSystem?.RegisterHandler<IMixedRealityGazeHandler>(this);
+    }
    public void OnBeforeFocusChange(FocusEventData eventData) { }
 
     public void OnFocusEnter(FocusEventData eventData)
