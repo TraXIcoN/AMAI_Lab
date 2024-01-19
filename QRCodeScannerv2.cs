@@ -17,18 +17,15 @@ public class QRCodeScannerv2 : MonoBehaviour, IMixedRealityPointerHandler
             if (eventData.Pointer.Result.CurrentPointerTarget.name == "QRCodeGenerator")
             {
                 // Access the encoded data from the QRCodeGenerator script
-                QRCodeGenerator qrGenerator = eventData.Pointer.Result.CurrentPointerTarget.GetComponent<QRCodeGenerator>();
-                if (qrGenerator != null)
-                {
-                    string encodedData = qrGenerator.GenerateQRCodeData;
+                //QRCodeGenerator qrGenerator = eventData.Pointer.Result.CurrentPointerTarget.GetComponent<QRCodeGenerator>();
+                    string encodedData =QRCodeGenerator.GenerateQRCodeData();
                     Debug.Log("QR Code Data: " + encodedData);
 
                     // Implement actions based on the encoded data
                     UseQRCodeData(encodedData);
-                }
+                
             }
         }
-    }
     public void OnPointerClicked(MixedRealityPointerEventData eventData)
     {
     // This method is intentionally left empty because you don't need any specific actions when the pointer goes down.
@@ -69,4 +66,5 @@ public class QRCodeScannerv2 : MonoBehaviour, IMixedRealityPointerHandler
         Debug.LogError("Invalid QR code data format");
     }
     }
+}
 }
